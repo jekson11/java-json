@@ -15,10 +15,7 @@ public class CreateJsonArrayTest {
         List<String> listJson = List.of("jekson", "tambunan", "sembilan belas tahun");
 
         ObjectMapper mapper = new ObjectMapper();
-        //menggunakan method seperti biasa sama saja dengan yang lain
-        //jadi kita juga bisa menulis array json ke sebuah file json menggunakan method writeValue()
-        //dan parameternya Write OutputStream dari java io
-        String json = mapper.writeValueAsString(listJson);
+       String json = mapper.writeValueAsString(listJson);
 
         System.out.println(json);
     }
