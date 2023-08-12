@@ -14,18 +14,14 @@ import java.util.List;
 public class ConverseObjectToJsonTest {
     @Test
     void testCreateJsonFromObject() throws JsonProcessingException {
-        //sebenarnya itu kalau mau membuat json itu kita buatnya dari object class seperti ini
-        //field yang ada pada object tersebut akan menjadi json
-        Person person = new Person();
+       Person person = new Person();
         person.setFirstName("Jekson");
         person.setLastName("tambunan");
         person.setHobbies(List.of("explore", "read", "movie"));
         person.setAddress(new Address("jl kamboja", "jakarta", "indonesia"));
 
         ObjectMapper mapper = new ObjectMapper();
-        //ini yang menggunaka writeValueAsString tanpa di simpan ke file jadi hanya di simpan di memory saja
-        //jadi ini bersifat sementara hanya saat programnya jalan
-        String json = mapper.writeValueAsString(person);
+       String json = mapper.writeValueAsString(person);
 
         System.out.println(json);
     }
