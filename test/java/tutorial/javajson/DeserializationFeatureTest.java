@@ -12,13 +12,8 @@ public class DeserializationFeatureTest {
     @Test
     void testDeserializationFeature() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper()
-                //ini membiarkan array singgle kalau ada ini kita tidak perlu menulis arraynya kalau misal nilainya cuma satu
-                //defaulya ini false jadi tidak boleh walau nilainya satu kita harus tetap menulis dia array kalau memang array
-                .configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
-                //kalau ini membiarkan kolom yang tidak di kenal jika ada kolom yang tidak sesuai dengan class person
-                //maka akan di ignore atau di biarkan defaultnya ini tru jadi akan error
-                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-                //penjelasannya di MapperFeatureTest
+             .configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
+               .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
                 .configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
 
         String json = """
